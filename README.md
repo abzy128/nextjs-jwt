@@ -1,1 +1,1 @@
-# 
+# Implementation of JWT token based authentication in Nextjs
