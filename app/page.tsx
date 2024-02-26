@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import CarouselItemModel from "@/models/carouselItemModel";
 import { useEffect, useState } from "react";
@@ -6,9 +6,11 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from "@/components/ui/carousel"
+} from "@/components/ui/carousel";
 import { Intro } from "@/components/ui/intro";
-import Autoplay from "embla-carousel-autoplay"
+import Autoplay from "embla-carousel-autoplay";
+import News from "@/components/ui/news";
+import CloudflareTrace from "@/components/ui/cloudflare-trace";
 
 export default function Home() {
   const [carouselItems, setCarouselItems] = useState<CarouselItemModel[]>([]);
@@ -22,9 +24,7 @@ export default function Home() {
   return (
     <main>
       <Intro />
-      <Carousel plugins={[
-        Autoplay({ delay: 5000 })
-      ]}>
+      <Carousel plugins={[Autoplay({ delay: 5000 })]}>
         <CarouselContent>
           {carouselItems.map((item) => (
             <CarouselItem key={item._id}>
@@ -43,6 +43,10 @@ export default function Home() {
           ))}
         </CarouselContent>
       </Carousel>
+      <h1 className="text-2xl font-bold">Get news about IT!</h1>
+      <News />
+      <h1 className="text-2xl font-bold">Trace your internet connection</h1>
+      <CloudflareTrace />
     </main>
   );
 }

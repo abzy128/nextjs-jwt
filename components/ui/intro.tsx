@@ -7,8 +7,8 @@ export function Intro() {
         News.
       </h1>
       <h4 className="text-center md:text-left text-lg md:pl-8">
-        <Link href="/api/docs">
-          <Button className="mx-2 p-6" variant={"outline"}>Swagger</Button>
+        <Link href="/admin">
+          <Button className="mx-2 p-6" variant={"outline"}>Admin</Button>
         </Link>
         <Link href="/register">
           <Button className="mx-2 p-6" variant={"secondary"}>Register</Button>
