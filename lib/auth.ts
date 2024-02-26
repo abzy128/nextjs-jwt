@@ -21,3 +21,7 @@ export async function verifyJWTToken(token: string) {
         algorithms: ["HS256"],
     });
 }
+export async function checkIfAdmin(token: string): Promise<boolean> {
+    const username = (await verifyJWTToken(token)).payload.userId;
+    return username === "admin";
+}

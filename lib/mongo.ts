@@ -13,3 +13,8 @@ export const dbClient = new MongoClient(uri, {
 export const db = dbClient.db("finaldb");
 export const dbCarousel = db.collection("carousel");
 export const dbUsers = db.collection("users");
+
+export async function getUserRole(username: string) {
+    const user = await dbUsers.findOne({ username });
+    return user?.role;
+}
